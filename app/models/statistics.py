@@ -1,9 +1,10 @@
 from sqlalchemy.orm import relationship, Mapped, mapped_column
 from sqlalchemy import ForeignKey
-
+from typing import TYPE_CHECKING
 from app.models import db
 
-
+if TYPE_CHECKING:
+    from app.models.questions import Question
 
 class Statistics(db.Model):
     __tablename__ = 'statistics'
