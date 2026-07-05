@@ -1,5 +1,5 @@
-from pydantic import BaseModel
-
+from pydantic import BaseModel, ConfigDict
+from app.models import Statistics
 from app.schemas import *
 
 
@@ -10,8 +10,7 @@ class QuestionCreateRequest(QuestionCreate):
 class QuestionUpdateRequest(QuestionUpdate):
     pass
 
-
-class QuestionReadResponse(QuestionRead):
+class QuestionResponse(QuestionRead):
     pass
 
 
@@ -19,12 +18,6 @@ class QuestionDetailResponse(QuestionRead):
     statistics: StatisticsRead | None = None
 
 
-class QuestionListResponse(QuestionRead):
-    pass
-
-
-class QuestionResponse(BaseModel):
-    items: list
+class QuestionListResponse(BaseModel):
+    items: list[QuestionResponse]
     count: int
-
-

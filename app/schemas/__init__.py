@@ -1,3 +1,14 @@
-from app.schemas.questions import QuestionRead, QuestionCreate, QuestionUpdate
-from app.schemas.responses import ResponseRead, ResponseCreate, ResponseUpdate
-from app.schemas.statistics import StatisticsRead
+from .statistics import StatisticsRead
+from .responses import ResponseRead, ResponseCreate, ResponseUpdate
+from .questions import QuestionRead, QuestionCreate, QuestionUpdate
+
+
+__all__ = [
+    "StatisticsRead",
+    "ResponseRead",
+    "ResponseCreate",
+    "ResponseUpdate",
+    "QuestionRead",
+    "QuestionCreate",
+    "QuestionUpdate",
+]

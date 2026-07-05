@@ -10,8 +10,8 @@ class Question(db.Model):
     id: Mapped[int] = mapped_column(primary_key=True)
     text: Mapped[str] = mapped_column(String(100))
 
-    statistics: Mapped['Statistics'] = relationship(back_populates='question', uselist=False)
-    responses: Mapped[list['Response']] = relationship(back_populates='question')
+    statistics: Mapped['Statistics'] = relationship(back_populates='question', uselist=False, cascade='all, delete-orphan')
+    responses: Mapped[list['Response']] = relationship(back_populates='question', cascade='all, delete-orphan')
     categories_id: Mapped[int] = mapped_column(ForeignKey('categories.id'))
     category: Mapped['Category'] = relationship(back_populates='question')
 

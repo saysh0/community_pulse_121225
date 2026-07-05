@@ -1,11 +1,11 @@
 from pydantic import BaseModel
 
 
-class ErrorIem(BaseModel):
+class ErrorItem(BaseModel):
     field: str
     message: str
 
 
 class ErrorResponse(BaseModel):
     error: str
-    details: list[ErrorIem] = []
+    details: list[ErrorItem] = []
