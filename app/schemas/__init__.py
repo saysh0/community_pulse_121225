@@ -1,7 +1,6 @@
 from .statistics import StatisticsRead
 from .responses import ResponseRead, ResponseCreate, ResponseUpdate
-from .questions import QuestionRead, QuestionCreate, QuestionUpdate
-
+from .questions import QuestionRead, QuestionCreate, QuestionUpdate, QuestionResponse, CategoryRead
 
 __all__ = [
     "StatisticsRead",
@@ -11,4 +10,6 @@ __all__ = [
     "QuestionRead",
     "QuestionCreate",
     "QuestionUpdate",
+    "QuestionResponse",
+    "CategoryRead",
 ]

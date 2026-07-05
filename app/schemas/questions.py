@@ -10,7 +10,7 @@ class QuestionBase(BaseModel):
 
 
 class QuestionCreate(QuestionBase):
-    pass
+    category_id: int
 
 
 class QuestionUpdate(QuestionBase):
@@ -19,5 +19,19 @@ class QuestionUpdate(QuestionBase):
 
 class QuestionRead(QuestionBase):
     model_config = ConfigDict(from_attributes=True)
-
     id: int
+
+
+class CategoryBase(BaseModel):
+    name: str
+
+
+class CategoryRead(CategoryBase):
+    model_config = ConfigDict(from_attributes=True)
+    id: int
+
+
+class QuestionResponse(QuestionBase):
+    model_config = ConfigDict(from_attributes=True)
+    id: int
+    category: CategoryRead

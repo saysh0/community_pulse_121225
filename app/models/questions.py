@@ -12,7 +12,7 @@ class Question(db.Model):
 
     statistics: Mapped['Statistics'] = relationship(back_populates='question', uselist=False, cascade='all, delete-orphan')
     responses: Mapped[list['Response']] = relationship(back_populates='question', cascade='all, delete-orphan')
-    categories_id: Mapped[int] = mapped_column(ForeignKey('categories.id'))
+    category_id: Mapped[int] = mapped_column(ForeignKey('categories.id'))
     category: Mapped['Category'] = relationship(back_populates='question')
 
     def __str__(self):
@@ -29,9 +29,7 @@ class Category(db.Model):
     question: Mapped[list['Question']] = relationship(back_populates='category')
 
     def __str__(self):
-        return self.text
+        return self.name
 
     def __repr__(self):
-        return f'id={self.id}, text={self.text}'
-
-
+        return f'id={self.id}, name={self.name}'

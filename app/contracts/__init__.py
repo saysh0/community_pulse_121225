@@ -2,8 +2,8 @@ from .errors import ErrorItem, ErrorResponse
 from app.contracts.questions import (QuestionDetailResponse,
                         QuestionListResponse,
                         QuestionCreateRequest,
-                        QuestionUpdateRequest,
-                        QuestionResponse)
+                        QuestionUpdateRequest)
+from app.schemas import QuestionResponse
 
 
 __all__ = [
@@ -12,5 +12,6 @@ __all__ = [
     'QuestionDetailResponse',
     'QuestionListResponse',
     'QuestionCreateRequest',
+    'QuestionUpdateRequest',
     'QuestionResponse'
 ]

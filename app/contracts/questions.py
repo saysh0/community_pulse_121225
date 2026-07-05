@@ -10,9 +10,6 @@ class QuestionCreateRequest(QuestionCreate):
 class QuestionUpdateRequest(QuestionUpdate):
     pass
 
-class QuestionResponse(QuestionRead):
-    pass
-
 
 class QuestionDetailResponse(QuestionRead):
     statistics: StatisticsRead | None = None
